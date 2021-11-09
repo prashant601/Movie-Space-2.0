@@ -11,6 +11,7 @@ app.use(express.json());
 
 // Connect DB
 connectDB();
+app.use(express.static('client/build'));
 
 // Define Routes
 app.use("/api/register", require("./api/register"));
