@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran&family=Caudex:wght@700&display=swap');
+
+/*
+ Sobre o box-sizing border-box:
+ http://sergiolopes.org/css-box-sizing-border-box/
+ */
+* {
+  box-sizing: border-box;
+}
+
+.movieBody{
+  -webkit-background-size: cover;
+  background-size: cover;
+  /* background: linear-gradient(to right,rgb(124, 4, 148), rgb(2, 109, 112) , rgb(10, 36, 150) , rgb(187, 5, 5)); */
+  color: rgb(131, 123, 123);
+  /* font-family: 'Catamaran', sans-serif; */
+  font-family: 'Caudex', serif;
+  margin: 0;
+}
+
+/*
+  Flex Direction: https://origamid.com/projetos/flexbox-guia-completo/#flex-direction
+
+  No modo column os itens ficam em uma unica coluna, um abaixo do outro
+*/
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* justify-content: flex-end; */
+  /* background-color: #373b69a1; */
+  /* background-color: #919192a1; */
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+}
+
+.search {
+  background-color: rgba(83, 77, 77, 0.719);
+  border: 2px solid #182533;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+  color: white;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.search::placeholder {
+  color: white;
+}
+
+.movie-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.movie {
+  background-color: rgb(181, 188, 190);
+  /* background-color: #1b09c438; */
+  /* background-color: #a1a0a338; */
+  border-radius: 3px;
+  backdrop-filter: blur(10px);
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+  overflow: hidden;     
+  position: relative;  
+  margin: 1rem;
+  width: 300px;
+}
+
+.movie img {
+  object-fit: cover center center;
+  height: 450px;
+  width: 100%;
+}
+
+.movie-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.movie-info h3 {
+  margin: 0;
+}
+
+/*
+ Sobre a propriedade position e o porque ele esta respeitando o elemento .movie:
+ https://pt-br.learnlayout.com/position.html
+
+ Sobre a propriedade transform:
+ https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform
+*/
+.movie-overview {
+  background-color: rgb(181, 188, 190);
+  /* backdrop-filter: blur(30px); */
+  color: #101f35;
+  font-style: bold;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow: 0 -3px 5px rgba(0,0,0,0.1);
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  max-height: 60%;
+  transform: translateY(102%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie:hover .movie-overview {
+  transform: translateY(0%);
+}
+
+.tag {
+  background-color: #22254b;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+.tag.green {
+  color: rgb(5, 184, 5);
+}
+
+.tag.orange {
+  color: orange;
+}
+
+.tag.red {
+  color: red;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #50515a93;
+  backdrop-filter: blur(10px);
+  margin-top: 7px;
+  /* padding: 1rem; */
+}
+
+.footer a {
+  text-decoration: none;
+  color:rgb(29, 28, 28);
+}
