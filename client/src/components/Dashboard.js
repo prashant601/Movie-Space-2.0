@@ -21,6 +21,7 @@ const Dashboard = ({ auth: { isAuthenticated, user } }) => {
         <center>
           Phone no.: <b> {user && user.number}</b>
           {/* {console.log("fln")} */}
+          <b>8127518645</b>
         </center>
       </div>
     </div>
